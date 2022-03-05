@@ -4,8 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const cors = require("cors");
- require('dotenv').config();
-
+require("dotenv").config();
 
 const feedRoutes = require("./routes/feed");
 const authRoutes = require("./routes/auth");
@@ -70,9 +69,7 @@ app.use((error, req, res, next) => {
 
 // Database connection
 mongoose
-  .connect(
-    process.env.MONGO_URI
-  )
+  .connect(process.env.MONGO_URI)
   .then((result) => {
     app.listen(8080, () => {
       console.log("server is listening on port 8080");
